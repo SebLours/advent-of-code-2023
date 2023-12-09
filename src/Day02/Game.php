@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace AdventOfCode\Day02;
 
+use ArrayObject;
+
 final class Game
 {
     private array $sets;
@@ -41,5 +43,28 @@ final class Game
         }
 
         return true;
+    }
+
+    public function getSetPower(): int
+    {
+        $score = new \SplObjectStorage();
+
+        foreach ($this->sets as $key => $set) {
+            foreach (Cube::fromExpr($set) as $cube) {
+                if (!$score->contains($cube)) {
+                    $score[$cube] = new ArrayObject();
+                }
+
+                $score[$cube][$key] = ($score[$cube][$key] ?? 0) + 1;
+            }
+        }
+
+        $power = 1;
+
+        foreach ($score as $cube) {
+            $power *= max(1, max($score[$cube]->getArrayCopy()));
+        }
+
+        return $power;
     }
 }

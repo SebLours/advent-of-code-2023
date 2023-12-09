@@ -32,4 +32,17 @@ final class AnswerTest extends ApplicationAwareTester
             trim($this->applicationTester->getDisplay()),
         );
     }
+
+    public function test_answer_2_sample(): void
+    {
+        $this->applicationTester->run([
+            'command' => 'day02:2',
+            '--input' => 'day02/input.sample.txt',
+        ]);
+
+        $this->assertSame(
+            'The sum of the sets power is 2286',
+            trim($this->applicationTester->getDisplay()),
+        );
+    }
 }

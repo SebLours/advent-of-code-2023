@@ -32,4 +32,17 @@ final class AnswerTest extends ApplicationAwareTester
             trim($this->applicationTester->getDisplay()),
         );
     }
+
+    public function test_answer_2_sample(): void
+    {
+        $this->applicationTester->run([
+            'command' => 'day03:2',
+            '--input' => 'day03/input.sample.txt',
+        ]);
+
+        $this->assertSame(
+            'The sum of all of the gear ratios is 467835',
+            trim($this->applicationTester->getDisplay()),
+        );
+    }
 }

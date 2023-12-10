@@ -25,7 +25,7 @@
     "extra": {
         "application": {
             "name": "2023 Advent of Code",
-            "version": "day:04"
+            "version": "day:05"
         }
     },
     "config": {

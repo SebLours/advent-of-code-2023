@@ -20,4 +20,29 @@ final class AnswerTest extends ApplicationAwareTester
             trim($this->applicationTester->getDisplay()),
         );
     }
+
+    public function test_answer_1(): void
+    {
+        $this->applicationTester->run([
+            'command' => 'day05:1',
+        ]);
+
+        $this->assertSame(
+            'There lowest location is 31599214',
+            trim($this->applicationTester->getDisplay()),
+        );
+    }
+
+    public function test_answer_2_sample(): void
+    {
+        $this->applicationTester->run([
+            'command' => 'day05:2',
+            '--input' => 'day05/input.sample.txt',
+        ]);
+
+        $this->assertSame(
+            'There lowest location is 46',
+            trim($this->applicationTester->getDisplay()),
+        );
+    }
 }

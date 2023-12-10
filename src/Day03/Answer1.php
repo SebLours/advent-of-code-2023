@@ -6,7 +6,6 @@ namespace AdventOfCode\Day03;
 
 use AdventOfCode\InputLoader;
 use loophp\collection\Collection;
-use loophp\collection\Contract\Operation\Splitable;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -61,7 +60,7 @@ final class Answer1 extends Command
         $symbols = Collection::fromIterable($items['symbol']);
 
         $result = Collection::fromIterable($items['number'])
-            ->filter(static function(Number $number) use ($symbols): bool {
+            ->filter(static function (Number $number) use ($symbols): bool {
                 foreach ($symbols as $symbol) {
                     if ($symbol->isAdjacent($number)) {
                         return true;

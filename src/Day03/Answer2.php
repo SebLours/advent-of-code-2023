@@ -6,7 +6,6 @@ namespace AdventOfCode\Day03;
 
 use AdventOfCode\InputLoader;
 use loophp\collection\Collection;
-use loophp\collection\Contract\Operation\Splitable;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

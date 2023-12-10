@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78f95a226db0614e748402006b8f2653",
+    "content-hash": "4af1ef07c2ce49f757eafc689fbb8c4a",
     "packages": [
         {
             "name": "loophp/collection",

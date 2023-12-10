@@ -32,4 +32,29 @@ final class AnswerTest extends ApplicationAwareTester
             trim($this->applicationTester->getDisplay()),
         );
     }
+
+    public function test_answer_2_sample(): void
+    {
+        $this->applicationTester->run([
+            'command' => 'day04:2',
+            '--input' => 'day04/input.sample.txt',
+        ]);
+
+        $this->assertSame(
+            'The total scratchcards is 30',
+            trim($this->applicationTester->getDisplay()),
+        );
+    }
+
+    public function test_answer_2(): void
+    {
+        $this->applicationTester->run([
+            'command' => 'day04:2',
+        ]);
+
+        $this->assertSame(
+            'The total scratchcards is 23806951',
+            trim($this->applicationTester->getDisplay()),
+        );
+    }
 }
